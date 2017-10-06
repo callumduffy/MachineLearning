@@ -1,0 +1,23 @@
+Performance;$novel_algorithm ($dataset_1);$baseline_algorithm_1 ($dataset_1);$baseline_algorithm_2 ($dataset_1);$baseline_algorithm_3 ($dataset_1);$novel_algorithm ($dataset_2);$baseline_algorithm_1 ($dataset_2);$baseline_algorithm_2 ($dataset_2);$baseline_algorithm_3 ($dataset_2)
+$common_metric_1;0.67;0.25;0.84;0.71;0.09;0.73;0.73;0.95
+$common_metric_2;0.8;0.05;0.73;0.91;0.32;0.04;0.06;0.7
+$common_metric_3;0.2;0.19;0.9;1;0.73;0.27;0.68;0.38
+$common_metric_4;0.93;0.7;0.76;0.13;0.87;0.48;0.48;0.84
+$common_metric_5;1;0.36;0.43;0.74;0.73;0.4;0.31;0.78
+$made_up_metric_1;0.31;0.05;0.15;0.25;0.87;0.69;1;0.18
+$made_up_metric_2;0.16;0.97;0.93;0.1;0.74;0.84;0.23;0.86
+;;;;;;;;
+Rank;$novel_algorithm ($dataset_1);$baseline_algorithm_1 ($dataset_1);$baseline_algorithm_2 ($dataset_1);$baseline_algorithm_3 ($dataset_1);$novel_algorithm ($dataset_2);$baseline_algorithm_1 ($dataset_2);$baseline_algorithm_2 ($dataset_2);$baseline_algorithm_3 ($dataset_2)
+$common_metric_1;3;4;1;2;4;2;2;1
+$common_metric_2;2;4;3;1;2;4;3;1
+$common_metric_3;3;4;2;1;1;4;2;3
+$common_metric_4;1;3;2;4;1;3;3;2
+$common_metric_5;1;4;3;2;2;3;4;1
+$made_up_metric_1;1;4;3;2;2;3;1;4
+$made_up_metric_2;3;1;2;4;3;2;4;1
+;;;;;;;;
+Rank Frequency (Overall);$novel_algorithm;$baseline_algorithm_1;$baseline_algorithm_2;$baseline_algorithm_3;;;;
+Rank 1;5;1;2;6;;;;
+Rank 2;4;2;5;4;;;;
+Rank 3;4;4;5;1;;;;
+Rank 4;1;7;2;3;;;;
