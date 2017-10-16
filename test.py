@@ -11,6 +11,9 @@ y = boston.target
 # `y` where each entry is a prediction obtained by cross
 # validation:
 
+print(boston)
+
+
 predicted = cross_val_predict(lr, boston.data, y, cv=10)
 fig, ax = plt.subplots()
 ax.scatter(y, predicted, edgecolors=(0, 0, 0))
