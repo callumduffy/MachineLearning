@@ -53,7 +53,7 @@ lr =linear_model.LinearRegression()
 
 #print(y)
 
-predicted = cross_val_predict(lr, data2 , y , cv=4)
+predicted = cross_val_predict(lr, data2 , y , cv=1)
 fig, ax = plt.subplots()
 ax.scatter(y, predicted, edgecolors=(0, 0, 0))
 ax.plot([y_min, y_max], [y_min, y_max], 'k--', lw=3)
