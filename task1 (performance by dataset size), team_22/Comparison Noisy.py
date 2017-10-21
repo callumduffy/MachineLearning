@@ -9,7 +9,7 @@ from sklearn.naive_bayes import GaussianNB
 from sklearn.svm import SVC
 
 # load dataset
-dataset = pd.read_csv("The SUM dataset, with noise.csv", delimiter=";").drop(['Instance','Feature 5 (meaningless)'], axis=1)
+dataset = pd.read_csv("The SUM dataset, with noise.csv", delimiter=";").drop(['Instance'], axis=1)
 
 dataset.loc[dataset['Noisy Target Class'] == "Very Large Number", 'Noisy Target Class'] = 4
 dataset.loc[dataset['Noisy Target Class'] == "Large Number", 'Noisy Target Class'] = 3

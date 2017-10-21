@@ -8,7 +8,7 @@ from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
 from sklearn.naive_bayes import GaussianNB
 from sklearn.svm import SVC
 # load dataset
-dataset = pd.read_csv("The SUM dataset, without noise.csv", delimiter=";").drop(['Instance','Feature 5 (meaningless)'], axis=1)
+dataset = pd.read_csv("The SUM dataset, without noise.csv", delimiter=";").drop(['Instance'], axis=1)
 
 dataset.loc[dataset['Target Class'] == "Very Large Number", 'Target Class'] = 4
 dataset.loc[dataset['Target Class'] == "Large Number", 'Target Class'] = 3
