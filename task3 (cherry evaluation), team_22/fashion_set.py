@@ -1,34 +1,35 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn import model_selection
-from sklearn.linear_model import LogisticRegression
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
-from sklearn.naive_bayes import GaussianNB
-from sklearn.svm import SVC
+from sklearn.linear_model import SGDClassifier
+from sklearn.gaussian_process.kernels import ConstantKernel, RBF
 
-dataset = pd.read_csv("OnlineNewsPopularity.csv", delimiter=", ").drop(['Instance'], axis=1)
+dataset = pd.read_csv("fashion-mnist_train.csv", delimiter=",")
 
+X = dataset
+Y = dataset['label']
+
+X= X.astype('int')
+Y=Y.astype('int')
 
 models = []
-models.append(('LR', LogisticRegression()))
-models.append(('KNN', KNeighborsClassifier()))
+#novel below
+models.append(('KNN', KNeighborsClassifier())) 
 models.append(('CART', DecisionTreeClassifier()))
-models.append(('NB', GaussianNB()))
+models.append(('GPC', GaussianProcessClassifier()))
+models.append(('SGDC', SGDClassifier()))
 
-lr = linear_model.LinearRegression()
-boston = datasets.load_boston()
-y = boston.target
+results = []
+names = []
+scoring = 'accuracy'
 
-# cross_val_predict returns an array of the same size as
-# `y` where each entry is a prediction obtained by cross
-# validation:
-
-predicted = cross_val_predict(lr, boston.data, y, cv=10)
-fig, ax = plt.subplots()
-ax.scatter(y, predicted, edgecolors=(0, 0, 0))
-ax.plot([y.min(), y.max()], [y.min(), y.max()], 'k--', lw=4)
-ax.set_xlabel('Measured')
-ax.set_ylabel('Predicted')
-plt.show()
+for name, model in models:
+    kfold = model_selection.KFold(n_splits=10)
+    cv_results = model_selection.cross_val_score(model, X[:size], Y[:size], cv=kfold, scoring=scoring)
+    results.append(cv_results)
+   	names.append(name)
+   	msg = "%s: %f (%f)" % (name, cv_results.mean(), cv_results.std())
+   	print(msg)
