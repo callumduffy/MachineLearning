@@ -1,12 +1,11 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn import model_selection
-from sklearn.linear_model import LogisticRegression
+from sklearn.linear_model import LogisticRegression, LinearRegression, Ridge
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.neighbors import KNeighborsClassifier
-from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
 from sklearn.naive_bayes import GaussianNB
-from sklearn.svm import SVC
+
 
 # load dataset
 dataset = pd.read_csv("The SUM dataset, with noise.csv", delimiter=";").drop(['Instance'], axis=1)
@@ -27,24 +26,18 @@ Y=Y.astype('int')
 # prepare configuration for cross validation test harness
 # prepare models
 models = []
-models.append(('LR', LogisticRegression()))
-models.append(('KNN', KNeighborsClassifier()))
-models.append(('CART', DecisionTreeClassifier()))
-models.append(('NB', GaussianNB()))
-models.append(('SVM', SVC()))
+models.append(('LogisticRegressionR', LogisticRegression(), 0))
+models.append(('KNN', KNeighborsClassifier(),0))
+models.append(('Linear Regression', LinearRegression(),1))
+models.append(('Ridge Regression', Ridge(alpha = .5),1))
 # evaluate each model in turn
-results = []
-names = []
-scoring = 'accuracy'
+
+scoring = ['accuracy','neg_mean_squared_error']
 
 for size in sizes:
-    print("Tesing size %d" % size)
-    for name, model in models:
-
+    print("\nSize is %d" % (size))
+    for name, model, score in models:
     	kfold = model_selection.KFold(n_splits=10)
-    	cv_results = model_selection.cross_val_score(model, X[:size], Y[:size], cv=kfold, scoring=scoring)
-    	results.append(cv_results)
-    	names.append(name)
-    	msg = "%s: %f (%f)" % (name, cv_results.mean(), cv_results.std())
+    	cv_results = model_selection.cross_val_score(model, X[:size], Y[:size], cv=kfold, scoring=scoring[score])
+    	msg = "%s: %f (%f) using %s for score" % (name, cv_results.mean(), cv_results.std(),  scoring[score])
     	print(msg)
-    # boxplot algorithm comparison
