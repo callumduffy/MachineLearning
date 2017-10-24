@@ -10,23 +10,21 @@ from sklearn.naive_bayes import GaussianNB
 dataset = pd.read_csv("OnlineNewsPopularity.csv", delimiter=",")
 
 toDrop = list(range(0,39))
-toDrop = toDrop+ (list(range(45,59)))
+toDrop = toDrop+ (list(range(44,60)))
 
 dataset.drop(dataset.columns[toDrop], axis=1, inplace=True)
 
-sizes = [100, 500, 1000, 5000,10000]
+sizes = [100, 500, 1000, 5000,10000, 50000,1000000]
 X = dataset
 Y = dataset[' shares']
 print(X)
-
-print(Y)
 X= X.astype('int')
 Y=Y.astype('int')
 # prepare configuration for cross validation test harness
 # prepare models
 models = []
-models.append(('LogisticRegressionR', LogisticRegression(), 0))
-models.append(('KNN', KNeighborsClassifier(),0))
+#models.append(('LogisticRegressionR', LogisticRegression(), 0))
+#models.append(('KNN', KNeighborsClassifier(),0))
 models.append(('Linear Regression', LinearRegression(),1))
 models.append(('Ridge Regression', Ridge(alpha=0.5),1))
 # evaluate each model in turn
