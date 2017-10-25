@@ -14,17 +14,17 @@ Y = dataset['label']
 X= X.astype('int')
 Y=Y.astype('int')
 models = []
-#models.append(('LogisticRegressionR', LogisticRegression(), 0))
-#models.append(('KNN', KNeighborsClassifier(),0))
-models.append(('Linear Regression', LinearRegression(),1))
-models.append(('Ridge Regression', Ridge(alpha = .5),1))
+models.append(('LogisticRegressionR', LogisticRegression(), 0))
+models.append(('KNN', KNeighborsClassifier(),0))
+#models.append(('Linear Regression', LinearRegression(),1))
+#models.append(('Ridge Regression', Ridge(alpha = .5),1))
 # evaluate each model in turn
-scoring = ['accuracy','neg_mean_squared_error']
+scoring = ['homogeneity_score','explained_variance']
 
 for size in sizes:
     print("\nSize is %d" % (size))
     for name, model, score in models:
     	kfold = model_selection.KFold(n_splits=10)
     	cv_results = model_selection.cross_val_score(model, X[:size], Y[:size], cv=kfold, scoring=scoring[score])
-    	msg = "%s: %f (%f) using %s for score" % (name, np.sqrt(cv_results.mean()*-1), cv_results.std(),  scoring[score])
+    	msg = "%s: %f (%f) using %s for score" % (name, cv_results.mean(), cv_results.std(),  scoring[score])
     	print(msg)
