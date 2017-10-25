@@ -28,7 +28,7 @@ models.append(('LR', LogisticRegression()))
 models.append(('SGDC', SGDClassifier()))
 
 # evaluate each model in turn
-scoring = ['accuracy', 'homogeneity_score', 'mutual_info_score', 'completeness_score', 'v_measure_score']
+scoring = ['accuracy', 'homogeneity_score', 'r2', 'completeness_score', 'v_measure_score']
 
 size = 100
 
@@ -42,9 +42,6 @@ for name, model in models:
         end = time.time()
         runtime = end-start
 
-    #    msg = "%s: \n%s: \n%s: %f (%f) " % (name, "5 Common Evaluation Metrics ", "Accuracy" ,  cv_results.mean(), cv_results.std())
         msg1 = "%s: %f (%f) " % (score ,  cv_results.mean(), cv_results.std())
         print("Time (score/cpu-time): %f" %(cv_results.mean()/runtime))
-
-        #msg5 = "%s: %f" % ("Times (seconds)" , (end-start) )
         print(msg1)
