@@ -2,11 +2,11 @@
 Linear_Regression --  The SUM Dataset (without noise) --  RMSE,0,0,0,0,0,0,0,#N/A,#N/A,#N/A,#N/A
 Linear_Regression --  The SUM Dataset (without noise) -- Explained Variance,1,1,1,1,1,1,1,#N/A,#N/A,#N/A,#N/A
 Linear_Regression --  The SUM Dataset (with noise) --  RMSE,0,0,0,0,0,0,0,#N/A,#N/A,#N/A,#N/A
-Linear_Regression --  The SUM Dataset (with noise) --  Explained Variance,0,0,0,0,0,0,0,#N/A,#N/A,#N/A,#N/A
+Linear_Regression --  The SUM Dataset (with noise) --  Explained Variance,1,1,1,1,1,1,1,#N/A,#N/A,#N/A,#N/A
 Linear_Regression --  fashion-mnist_train --  RMSE,0.932,0.783,0.452,0.0002,0,0,0,#N/A,#N/A,#N/A,#N/A
 Linear_Regression --  fashion-mnist_train --   Explained Variance,0.324,0.4022,0.9831,0.9936,1,1,1,#N/A,#N/A,#N/A,#N/A
 Linear_Regression --  OnlineNewsPopularity --   RMSE,0,0,0,0,0,0,0,#N/A,#N/A,#N/A,#N/A
-Linear_Regression --  OnlineNewsPopularity --   Explained Variance,0,0,0,0,0,0,0,#N/A,#N/A,#N/A,#N/A
+Linear_Regression --  OnlineNewsPopularity --   Explained Variance,1,1,1,1,1,1,1,#N/A,#N/A,#N/A,#N/A
 Ridge Regression --  The SUM Dataset (without noise) --  RMSE,0.3539,0.006623,0.00306,0.000632,0.00032,0.000006,0.000003,#N/A,#N/A,#N/A,#N/A
 Ridge Regression --  The SUM Dataset (without noise) --  Explained Variance ,0.99992629,0.999902,0.9999961,0.999998,1,1,1,#N/A,#N/A,#N/A,#N/A
 Ridge Regression --  The SUM Dataset (with noise) --  RMSE,0.18,0.03,0.0152,0.034,0.0159,0.0032,0.0002,#N/A,#N/A,#N/A,#N/A
@@ -14,7 +14,7 @@ Ridge Regression --  The SUM Dataset (with noise) --  Explained Variance,0.018,0
 Ridge Regression --  fashion-mnist_train --   RMSE,0.932,0.82,0.452,0.215,0.0049,0.0007,0.00003,#N/A,#N/A,#N/A,#N/A
 Ridge Regression --  fashion-mnist_train --   Explained Variance,0.325,0.4102,0.9236,0.9534,1,1,1,#N/A,#N/A,#N/A,#N/A
 Ridge Regression --  OnlineNewsPopularity --  RMSE,0,0,0,0,0,0,0,#N/A,#N/A,#N/A,#N/A
-Ridge Regression -- OnlineNewsPopularity --  Explained Variance,0,0,0,0,0,0,0,#N/A,#N/A,#N/A,#N/A
+Ridge Regression -- OnlineNewsPopularity --  Explained Variance,1,1,1,1,1,1,1,#N/A,#N/A,#N/A,#N/A
 Logistic_Regression --  The SUM Dataset (without noise) --  Accuracy,0.89,0.892,0.901,0.897,0.867,0.893,0.894113,#N/A,#N/A,#N/A,#N/A
 Logistic_Regression --  The SUM Dataset (without noise) -- Homogeneity Score,0.429854,0.425439,0.469904,0.41606,0.413808,0.393135,N/a,#N/A,#N/A,#N/A,#N/A
 Logistic_Regression --  The SUM Dataset (with noise) --  $Accuracy,0.89,0.9,0.89,0.8882,0.8877,0.8882,0.8889,#N/A,#N/A,#N/A,#N/A
