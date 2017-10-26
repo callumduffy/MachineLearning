@@ -10,8 +10,7 @@ from sklearn.naive_bayes import GaussianNB
 
 # load dataset
 dataset = pd.read_csv("The SUM dataset, with noise.csv", delimiter=";").drop(['Instance'], axis=1)
-
-C = dataset
+#Classify the words into numbers
 dataset.loc[dataset['Noisy Target Class'] == "Very Large Number", 'Noisy Target Class'] = 4
 dataset.loc[dataset['Noisy Target Class'] == "Large Number", 'Noisy Target Class'] = 3
 dataset.loc[dataset['Noisy Target Class'] == "Medium Number", 'Noisy Target Class'] = 2
@@ -28,13 +27,12 @@ Y=Y.astype('int')
 # prepare configuration for cross validation test harness
 # prepare models
 models = []
-#models.append(('LogisticRegressionR', LogisticRegression(), 0))
-#models.append(('KNN', KNeighborsClassifier(),0))
+models.append(('LogisticRegressionR', LogisticRegression(), 0))
+models.append(('KNN', KNeighborsClassifier(),0))
 models.append(('Linear Regression', LinearRegression(),1))
 models.append(('Ridge Regression', Ridge(),1))
 # evaluate each model in turn
 
-dataset = C
 
 scoring = ['accuracy','explained_variance']
 
@@ -43,5 +41,5 @@ for size in sizes:
     for name, model, score in models:
     	kfold = model_selection.KFold(n_splits=10)
     	cv_results = model_selection.cross_val_score(model, X[:size], Y[:size], cv=kfold, scoring=scoring[score])
-    	msg = "%s: %f (%f) using %s for score" % (name, cv_results.mean(), cv_results.std(),  scoring[score])
-    	print(msg)
+    	mess = "%s: %f  using %s for score" % (name, cv_results.mean(),  scoring[score])
+    	print(mess)
