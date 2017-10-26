@@ -1,23 +1,42 @@
-Performance,KNeighborsClassifier (Fashion Set),LogisticRegression (Fashion Set),DecisionTreeClassifier (Fashion Set),SGDClassifier (Fashion Set),KNeighborsClassifier (News Set),LogisticRegression (News Set),DecisionTreeClassifier (News Set),SGDClassifier (News Set)
-Accuracy, 0.759000 (0.031765),0.757000 (0.041243), 0.998000 (0.004000),,,,,
-Homogeneity_score, 0.727566 (0.039289), 0.716231 (0.035583), 0.998614 (0.004157),,,,,
-Completeness_score,0.736468 (0.041523),0.718749 (0.035690), 0.995594 (0.006746),,,,,
-V_measure_score, 0.731973 (0.040255), 0.717481 (0.035563), 0.998614 (0.004157),,,,,
-$common_metric_,,,,,,,,
-Time (score/cpu-time),,,,,,,,
-$made_up_metric_,,,,,,,,
-;;;;;;;;,,,,,,,,
-Rank,KNeighborsClassifier (Fashion Set),LogisticRegression (Fashion Set),DecisionTreeClassifier (Fashion Set),SGDClassifier (Fashion Set),KNeighborsClassifier (News Set),LogisticRegression (News Set),DecisionTreeClassifier (News Set),SGDClassifier (News Set)
-Accuracy,,,,,,,,
-Homogeneity_score,,,,,,,,
-Completeness_score,,,,,,,,
-V_measure_score,,,,,,,,
-$common_metric_,,,,,,,,
-Time (score/cpu-time),,,,,,,,
-$made_up_metric_,,,,,,,,
-;;;;;;;;,,,,,,,,
-Rank Frequency ,KNeighborsClassifier (Fashion Set),LogisticRegression (Fashion Set),DecisionTreeClassifier (Fashion Set),SGDClassifier (Fashion Set),,,,
+Performance,$novel_algorithm ($dataset_1),$baseline_algorithm_1 ($dataset_1),$baseline_algorithm_2 ($dataset_1),$baseline_algorithm_3 ($dataset_1),$novel_algorithm ($dataset_2),$baseline_algorithm_1 ($dataset_2),$baseline_algorithm_2 ($dataset_2),$baseline_algorithm_3 ($dataset_2)
+$common_metric_1,0.759,0.757,0.998,0.716,0.014,0.026,0.621,0.007
+$common_metric_2,0.727566,0.716231,0.998614,0.70522,0.658899,0.695869,0.967946,0.192351
+$common_metric_3,0.736468,0.718749,0.995594,0.709308,0.800731,0.81573,0.996685,0.767279
+$common_metric_4,0.731973,0.717481,0.998614,0.700897,0.718147,0.745842,0.984365,0.245009
+$common_metric_5,0.731995,0.717485,0.995564,0.711396,0.72391,0.750687,0.982189,0.328186
+$made_up_metric_1,,,,,,,,
+$made_up_metric_2,,,,,,,,
+,,,,,,,,
+Rank,$novel_algorithm ($dataset_1),$baseline_algorithm_1 ($dataset_1),$baseline_algorithm_2 ($dataset_1),$baseline_algorithm_3 ($dataset_1),$novel_algorithm ($dataset_2),$baseline_algorithm_1 ($dataset_2),$baseline_algorithm_2 ($dataset_2),$baseline_algorithm_3 ($dataset_2)
+$common_metric_1,,,,,,,,
+$common_metric_2,,,,,,,,
+$common_metric_3,,,,,,,,
+$common_metric_4,,,,,,,,
+$common_metric_5,,,,,,,,
+$made_up_metric_1,#N/A,#N/A,#N/A,#N/A,#N/A,#N/A,#N/A,#N/A
+$made_up_metric_2,#N/A,#N/A,#N/A,#N/A,#N/A,#N/A,#N/A,#N/A
+,,,,,,,,
+Rank Frequency,$novel_algorithm,$baseline_algorithm_1,$baseline_algorithm_2,$baseline_algorithm_3,,,,
 Rank 1,,,,,,,,
 Rank 2,,,,,,,,
 Rank 3,,,,,,,,
 Rank 4,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,Novel Algorithm,$novel_algorithm,,,,,,
+,Baseline Algorithm 1,$baseline_algorithm_1,,,,,,
+,Baseline Algorithm 2,$baseline_algorithm_2,,,,,,
+,Baseline Algorithm 3,$baseline_algorithm_3,,,,,,
+,Dataset 1,$dataset_1,,,,,,
+,Dataset 2,$dataset_2,,,,,,
+,Common Metric 1,$common_metric_1,,,,,,
+,Common Metric 2,$common_metric_2,,,,,,
+,Common Metric 3,$common_metric_3,,,,,,
+,Common Metric 4,$common_metric_4,,,,,,
+,Common Metric 5,$common_metric_5,,,,,,
+,Made Up Metric 1,$made_up_metric_1,,,,,,
+,Made Up Metric 2,$made_up_metric_2,,,,,,

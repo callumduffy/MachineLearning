@@ -25,7 +25,7 @@ models.append(('LR', LogisticRegression()))
 models.append(('DTC', DecisionTreeClassifier()))
 models.append(('SGDC', SGDClassifier()))
 
-scoring = ['accuracy', 'homogeneity_score', 'mutual_info_score', 'completeness_score', 'v_measure_score']
+scoring = ['accuracy', 'homogeneity_score', 'precision', 'completeness_score', 'v_measure_score']
 
 size = 1000
 
