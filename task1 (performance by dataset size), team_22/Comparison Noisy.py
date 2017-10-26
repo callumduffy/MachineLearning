@@ -11,6 +11,7 @@ from sklearn.naive_bayes import GaussianNB
 # load dataset
 dataset = pd.read_csv("The SUM dataset, with noise.csv", delimiter=";").drop(['Instance'], axis=1)
 
+C = dataset
 dataset.loc[dataset['Noisy Target Class'] == "Very Large Number", 'Noisy Target Class'] = 4
 dataset.loc[dataset['Noisy Target Class'] == "Large Number", 'Noisy Target Class'] = 3
 dataset.loc[dataset['Noisy Target Class'] == "Medium Number", 'Noisy Target Class'] = 2
@@ -30,15 +31,17 @@ models = []
 #models.append(('LogisticRegressionR', LogisticRegression(), 0))
 #models.append(('KNN', KNeighborsClassifier(),0))
 models.append(('Linear Regression', LinearRegression(),1))
-models.append(('Ridge Regression', Ridge(alpha = .5),1))
+models.append(('Ridge Regression', Ridge(),1))
 # evaluate each model in turn
 
-scoring = ['homogeneity_score','explained_variance']
+dataset = C
+
+scoring = ['accuracy','explained_variance']
 
 for size in sizes:
     print("\nSize is %d" % (size))
     for name, model, score in models:
     	kfold = model_selection.KFold(n_splits=10)
     	cv_results = model_selection.cross_val_score(model, X[:size], Y[:size], cv=kfold, scoring=scoring[score])
-    	msg = "%s: %f (%f) using %s for score" % (name, np.sqrt(cv_results.mean()*-1), cv_results.std(),  scoring[score])
+    	msg = "%s: %f (%f) using %s for score" % (name, cv_results.mean(), cv_results.std(),  scoring[score])
     	print(msg)
