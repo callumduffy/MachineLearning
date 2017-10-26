@@ -23,24 +23,28 @@ Y=Y.astype('int')
 models = []
 #novel below
 models.append(('KNN', KNeighborsClassifier()))
-models.append(('CART', DecisionTreeClassifier()))
+models.append(('DTC', DecisionTreeClassifier()))
 models.append(('LR', LogisticRegression()))
 models.append(('SGDC', SGDClassifier()))
 
 # evaluate each model in turn
 scoring = ['accuracy', 'homogeneity_score', 'normalized_mutual_info_score', 'completeness_score', 'v_measure_score']
-size = 100
+size = 1000
 
 for name, model in models:
     print("\n%s" %(name))
 
     for score in scoring:
         kfold = model_selection.KFold(n_splits=10)
-        start = time.time()
-        cv_results = model_selection.cross_val_score(model, X[:size], Y[:size], cv=kfold, scoring=score)
-        end = time.time()
-        runtime = end-start
-
-        msg1 = "%s: %f (%f) " % (score ,  cv_results.mean(), cv_results.std())
-        #print("Time (score/cpu-time): %f" %(1/(cv_results.mean()/runtime)))
+        #set to check time for accuracy of each algo
+        if score == 'accuracy':
+            start = time.time()
+            cv_results = model_selection.cross_val_score(model, X[:size], Y[:size], cv=kfold, scoring=score)
+            end = time.time()
+            runtime = end-start
+            timescore = cv_results.mean()/runtime
+            msg1 = "%s: %f (%f) Timescore: %f " % (score ,  cv_results.mean(), cv_results.std(),timescore)
+        else:
+            cv_results = model_selection.cross_val_score(model, X[:size], Y[:size], cv=kfold, scoring=score)
+            msg1 = "%s: %f (%f) " % (score ,  cv_results.mean(), cv_results.std())
         print(msg1)
