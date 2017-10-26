@@ -28,9 +28,8 @@ models.append(('LR', LogisticRegression()))
 models.append(('SGDC', SGDClassifier()))
 
 # evaluate each model in turn
-#scoring = ['accuracy', 'homogeneity_score', 'normalized_mutual_info_score', 'completeness_score', 'v_measure_score']
-scoring =['normalized_mutual_info_score']
-size = 1000
+scoring = ['accuracy', 'homogeneity_score', 'normalized_mutual_info_score', 'completeness_score', 'v_measure_score']
+size = 100
 
 for name, model in models:
     print("\n%s" %(name))
