@@ -9,6 +9,7 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.linear_model import SGDClassifier
 from sklearn.linear_model import LogisticRegression
 
+#load dataset
 dataset = pd.read_csv("fashion-mnist_train.csv", delimiter=",")
 
 X = dataset
@@ -17,6 +18,7 @@ Y = dataset['label']
 X= X.astype('int')
 Y=Y.astype('int')
 
+# put models into list so I can loop through them
 models = []
 #novel below
 models.append(('KNN', KNeighborsClassifier())) 
@@ -25,6 +27,7 @@ models.append(('LR', LogisticRegression()))
 models.append(('DTC', DecisionTreeClassifier()))
 models.append(('SGDC', SGDClassifier()))
 
+#5 evalution Metrics, evaluate each model in turn
 scoring = ['accuracy', 'homogeneity_score', 'normalized_mutual_info_score', 'completeness_score', 'v_measure_score']
 
 size = 1000
